@@ -1,11 +1,13 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 type initialStateProp = {
-    cart: Products[]
+    cart: Products[],
+    cartMap: Map<number, Products>
 }
 
 const initialStateCart: initialStateProp = {
     cart: [],
+    cartMap: new Map()
 }
 
 const cartSlice = createSlice({
@@ -19,9 +21,9 @@ const cartSlice = createSlice({
         },
 
         // REMOVE FROM CART FUNCTION
-        removeFromCart: (state: initialStateProp, action: PayloadAction<Products["title"]>) => {
-            const arrayAfterItemRemoved= state.cart.filter((item: Products) => {
-                item.title !== action.payload
+        removeFromCart: (state: initialStateProp, action: PayloadAction<Products["id"]>) => {
+            const arrayAfterItemRemoved = state.cart.filter((item: Products) => {
+                return item.id !== action.payload
             })
             state.cart = arrayAfterItemRemoved
         },
@@ -29,7 +31,7 @@ const cartSlice = createSlice({
         // REMOVE ALL ITEMS
         removeAllItems: (state: initialStateProp) => {
             state.cart.splice(0, state.cart.length)
-        }
+        },
     }
 })
 

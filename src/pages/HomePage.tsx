@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import ProductsCard from '../components/essentials/ProductCard';
 import { getProducts } from '../lib/getProducts';
@@ -7,8 +6,6 @@ import { getProducts } from '../lib/getProducts';
 
 export default function HomePage() {
     const [products, setProduts] = useState<Products[]>([])
-    const cart: Products[]= useSelector((state: any) => state.cart.cart)
-    console.log(cart.length);
     
 
     useEffect(() => {
