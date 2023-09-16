@@ -16,7 +16,6 @@ function RemoveFromCartBtn({ className, props }: Props) {
 
     const dispatch = useDispatch();
 
-    
     const removeItemFromCart = () => {
         dispatch(removeFromCart(id))
 

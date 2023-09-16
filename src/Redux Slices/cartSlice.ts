@@ -2,12 +2,10 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 type initialStateProp = {
     cart: Products[],
-    cartMap: Map<number, Products>
 }
 
 const initialStateCart: initialStateProp = {
     cart: [],
-    cartMap: new Map()
 }
 
 const cartSlice = createSlice({

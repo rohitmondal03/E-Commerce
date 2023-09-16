@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+
 import { Card, CardHeader, CardContent, CardDescription, CardTitle, CardFooter } from "../ui/card"
 import { AddToCartBtn } from "./AddToCartBtn";
 import RemoveFromCartBtn from "./RemoveFromCartBtn";
@@ -15,12 +16,12 @@ export default function ProductsCard({ prop }: Props) {
     return (
         <Card className="shadow-xl">
             <CardHeader>
-                <CardTitle className="text-3xl font-bold mb-3 underline decoration-gray-400">{title}</CardTitle>
+                <CardTitle className="text-2xl sm:text-3xl font-bold mb-3 underline decoration-gray-400">{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
 
             <CardContent>
-                <img src={image} className="h-[50vh] mx-auto my-10" />
+                <img src={image} className="h-[35vh] md:h-[50vh] mx-auto my-10" />
 
                 <div className="text-xl">
                     <p>Rating: {rating.rate}</p>
